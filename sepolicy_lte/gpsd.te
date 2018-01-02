@@ -1,0 +1,2 @@
+# Allow gpsd to connect to rild
+unix_socket_connect(gpsd, rild, rild)
