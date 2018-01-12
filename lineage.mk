@@ -13,8 +13,9 @@ $(call inherit-product, vendor/cm/config/telephony.mk)
 PRODUCT_NAME := lineage_gts28ltexx
 PRODUCT_DEVICE := gts28ltexx
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-T815
+PRODUCT_MODEL := SM-T715
 PRODUCT_MANUFACTURER := samsung
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=gts28ltexx

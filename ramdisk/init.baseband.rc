@@ -24,15 +24,17 @@ on fs
     chown radio system /sys/devices/virtual/misc/umts_dm0/dm_state
 
 # Parse hardware revision (needs to happen before cbd starts)
-service modemloader /system/bin/modemloader
-    class core
-    oneshot
+#service modemloader /system/bin/modemloader
+#    class core
+#    oneshot
 
 # CP Boot Daemon (CBD)
 service cpboot-daemon /system/bin/cbd -d -t ss333 -b s -m l -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw log shell
+	seclabel u:r:cpboot-daemon:s0
+
 on property:persist.sys.cpboot=disable
     stop cpboot-daemon
 
